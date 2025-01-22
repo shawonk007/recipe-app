@@ -4,6 +4,7 @@ import App from './App.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './style.css';
+import './assets/core/fonts.css';
 
 export function createApp() {
   const app = createSSRApp(App);

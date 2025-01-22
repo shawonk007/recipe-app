@@ -1,5 +1,5 @@
 <script>
-import Main from '../layouts/Main.vue';
+import Main from '@/layouts/Main.vue';
 
 export default {
   name: 'home-page',

@@ -1,6 +1,9 @@
 import { createSSRApp } from 'vue'
 import { createRouterInstance } from './router';
-import App from './App.vue'
+import App from './App.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './style.css';
 
 export function createApp() {
   const app = createSSRApp(App);

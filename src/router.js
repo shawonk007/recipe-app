@@ -1,5 +1,6 @@
 import { createMemoryHistory, createWebHistory, createRouter } from 'vue-router';
 import Home from '@/pages/Home.vue';
+import Single from '@/pages/Single.vue';
 
 const routes = [
   {
@@ -8,6 +9,14 @@ const routes = [
     component: Home,
     meta: {
       title: 'Homepage',
+    },
+  },
+  {
+    path: '/recipes/:id/:title?',
+    name: 'single',
+    component: Single,
+    meta: {
+      title: 'Recipe',
     },
   },
 ];
@@ -19,7 +28,10 @@ export function createRouterInstance() {
   });
   router.beforeEach(async (to, from, next) => {
     const defaultTitle = "Recipe App";
-    document.title = to.meta?.title + ' | ' + defaultTitle || defaultTitle;
+    const pageTitle = to.params.title 
+      ? `${to.params.title} | ${defaultTitle}` 
+      : to.meta?.title + ' | ' + defaultTitle || defaultTitle;
+    document.title = pageTitle;
     next();
   });
   return router;

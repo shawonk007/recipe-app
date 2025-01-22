@@ -1,5 +1,5 @@
 <script>
-import Section from '@/components/global/Section.vue'
+import Section from '@/components/global/Section.vue';
 import api from '@/api.js';
 
 export default {
@@ -45,10 +45,10 @@ export default {
   <Section v-else theme="bg-gray-100" >
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" >
       <div v-for="recipe in recipes" class="block border border-teal-300 rounded shadow-lg p-4" :key="recipe.id" data-aos="fade-up" :data-aos-delay="recipe.id * 100" data-aos-duration="1000" >
-        <div>
-          <img :src="recipe.image" class="rounded" :alt="recipe.name + ' Thumnail'" />
-        </div>
-        <h3 class="text-lg text-center font-nova font-extrabold my-3" >{{ recipe.name }}</h3>
+        <img :src="recipe.image" class="rounded" :alt="recipe.name + ' Thumnail'" />
+        <router-link :to="{ name: 'single', params: { id: recipe.id, title: recipe.name } }" >
+          <h3 class="text-lg text-center font-nova font-extrabold my-3" >{{ recipe.name }}</h3>
+        </router-link>
         <div class="flex justify-between items-center text-sm" >
           <h6 class="inline-block font-semibold bg-teal-300 rounded-full px-4 py-1" >{{ recipe.cuisine }}</h6>
           <p class="font-medium" >

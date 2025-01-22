@@ -1,6 +1,9 @@
 import './style.css'
 import { createApp } from './main'
+import { createRouterInstance } from './router';
 
-const { app } = createApp()
+const { app, router } = createApp();
 
-app.mount('#app')
+router.isReady().then(() => {
+  app.mount('#app');
+});

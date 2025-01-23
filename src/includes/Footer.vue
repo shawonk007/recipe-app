@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <footer class="block bg-emerald-900 px-28 py-2 w-full" >
+  <footer class="block bg-zinc-300 px-28 py-2 w-full" >
     <div class="container flex flex-col lg:flex-row justify-evenly lg:justify-between items-center gap-4" >
       <p class="flex items-center gap-1" >
         <span>{{ currentYear }}</span>

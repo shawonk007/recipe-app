@@ -2,6 +2,8 @@
 import Section from '@/components/global/Section.vue';
 import api from '@/api.js';
 
+const { dummy } = api;
+
 export default {
   name: 'home-recipe',
   data() {
@@ -17,7 +19,7 @@ export default {
   methods: {
     async fetchRecipes() {
       try {
-        const response = await api.get(`/recipes?limit=6&sortBy=id&order=desc&select=id,name,image,cuisine,rating`);
+        const response = await dummy.get(`/recipes?limit=6&sortBy=id&order=desc&select=id,name,image,cuisine,rating`);
         this.recipes = response.data.recipes;
       } catch (error) {
         console.error('Error fetching recipes:', error);

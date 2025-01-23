@@ -1,6 +1,9 @@
 <script>
+import Footer from '@/includes/Footer.vue';
+
 export default {
-  name: 'main-layout'
+  name: 'main-layout',
+  components: { Footer }
 }
 </script>
 
@@ -8,4 +11,5 @@ export default {
   <main>
     <slot />
   </main>
+  <Footer />
 </template>
